@@ -14,6 +14,7 @@ gem 'rails', '~> 7.0', '>= 7.0.2.4'
 # Database, ORM, Model, etc
 #
 gem 'mysql2', '~> 0.5.3'
+gem 'paranoia', '~> 2.1', '>= 2.1.5'
 
 #
 # Web servers
@@ -39,9 +40,10 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 gem 'pundit', '~> 2.2'
 
 #
-# Serializer
+# Others
 #
 gem 'active_model_serializers', '~> 0.10.13'
+gem 'rubocop', '~> 1.29', require: false
 
 group :development do
   gem 'annotate', '~> 3.2'
