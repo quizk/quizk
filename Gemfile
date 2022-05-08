@@ -43,7 +43,7 @@ gem 'pundit', '~> 2.2'
 # Others
 #
 gem 'active_model_serializers', '~> 0.10.13'
-gem 'rubocop', '~> 1.29', require: false
+gem 'rubocop-rails', '~> 2.13', '>= 2.13.2', require: false
 
 group :development do
   gem 'annotate', '~> 3.2'
