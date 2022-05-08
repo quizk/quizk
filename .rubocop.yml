@@ -93,6 +93,9 @@ Layout/SpaceAroundOperators:
 #
 # Style
 #
+Style/Documentation:
+  Enabled: false
+
 Style/TrailingCommaInArguments:
   EnforcedStyleForMultiline: consistent_comma
 

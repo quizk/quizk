@@ -48,6 +48,7 @@ gem 'rubocop-rails', '~> 2.13', '>= 2.13.2', require: false
 group :development do
   gem 'annotate', '~> 3.2'
   gem 'better_errors', '~> 2.9', '>= 2.9.1'
+  gem 'rails-erd', '~> 1.5', '>= 1.5.2'
   gem 'listen', '~> 3.7', '>= 3.7.1'
   gem 'rack-mini-profiler', '~> 3.0'
   gem 'spring', '~> 4.0'
