@@ -14,7 +14,7 @@ gem 'rails', '~> 7.0', '>= 7.0.2.4'
 # Database, ORM, Model, etc
 #
 gem 'mysql2', '~> 0.5.3'
-gem 'paranoia', '~> 2.1', '>= 2.1.5'
+gem 'discard', '~> 1.2'
 
 #
 # Web servers
