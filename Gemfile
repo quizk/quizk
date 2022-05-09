@@ -24,9 +24,10 @@ gem 'puma', '~> 5.6', '>= 5.6.4'
 #
 # Views
 #
+gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
 gem 'ransack', '~> 3.1'
-gem 'sass-rails', '~> 6.0'
+gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 gem 'simple_form', '~> 5.1'
 gem 'slim-rails', '~> 3.4'
 
@@ -43,6 +44,7 @@ gem 'pundit', '~> 2.2'
 # Others
 #
 gem 'active_model_serializers', '~> 0.10.13'
+gem 'importmap-rails', '~> 1.0'
 gem 'rubocop-rails', '~> 2.13', '>= 2.13.2', require: false
 
 group :development do
