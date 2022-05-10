@@ -10,13 +10,16 @@ module Ops
 
     def show; end
 
-    def new; end
+    def new
+      @operator = Operator.new
+    end
     
     def create
       @operator = Operator.new(create_params)
       if @operator.save
         redirect_to operators_path, notice: t('flashes.created')
       else
+        flash[:error] = @operator.errors.full_messages.join(', ')
         render :new
       end
     end
