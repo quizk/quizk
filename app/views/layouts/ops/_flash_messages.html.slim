@@ -1,0 +1,15 @@
+- if flash[:notice]
+  .alert.alert-success.alert-dismissible.d-flex.flex-column.flex-sm-row.p-5.mb-10.fade.show role='alert'
+    i.fa-solid.fa-check.text-success.fs-2.me-4
+    h4.text-success.fw-bold.mb-0 = flash[:notice]
+    i.fa-solid.fa-xmark.text-success.fs-2.ms-auto[type='button' data-bs-dismiss='alert']
+- if flash[:error]
+  .alert.alert-danger.alert-dismissible.d-flex.flex-column.flex-sm-row.p-5.mb-10.fade.show role='alert'
+    i.fa-solid.fa-exclamation.text-danger.fs-2.me-4
+    h4.text-danger.fw-bold.mb-0 = flash[:error]
+    i.fa-solid.fa-xmark.text-danger.fs-2.ms-auto[type='button' data-bs-dismiss='alert']
+- if flash[:alert]
+  .alert.alert-warning.alert-dismissible.d-flex.flex-column.flex-sm-row.p-5.mb-10.fade.show role='alert'
+    i.fa-solid.fa-bell.text-warning.fs-2.me-4
+    h4.text-warning.fw-bold.mb-0 = flash[:alert]
+    i.fa-solid.fa-xmark.text-warning.fs-2.ms-auto[type='button' data-bs-dismiss='alert']

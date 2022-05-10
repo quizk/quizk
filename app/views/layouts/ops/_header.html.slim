@@ -1,0 +1,35 @@
+.header
+  .container-fluid.d-flex.align-items-stretch.justify-content-between
+    .page-title.d-flex.flex-column.align-items-start.justify-content-center.flex-wrap.me-lg-2.pb-2.pb-lg-0
+      h1.text-dark.fw-bolder.my-1.fs-2
+        = content_for?(:title) ? yield(:title) : 'Dashboard'
+      / ul.breadcrumb.fw-bold.fs-base.my-1
+      /   li.breadcrumb-item.text-muted
+      /     a.text-muted[href="index.html"]
+      /       | Home
+      /   li.breadcrumb-item.text-dark
+      /     | Dashboard
+    .d-flex.align-items-stretch.flex-shrink-0
+      .d-flex.align-items-center.ms-1.ms-lg-3
+        .cursor-pointer.symbol.symbol-30px.symbol-md-40px
+          = image_tag 'public/avatar.jpg'
+        / .menu.menu-sub.menu-sub-dropdown.menu-column.menu-rounded.menu-gray-600.menu-state-bg-light-primary.fw-bold.py-4.fs-6.w-275px
+        /   .menu-item.px-3
+        /     .menu-content.d-flex.align-items-center.px-3
+        /       .symbol.symbol-50px.me-5
+        /         = image_tag 'public/avatar.jpg'
+        /       .d-flex.flex-column
+        /         .fw-bolder.d-flex.align-items-center.fs-5
+        /           | Max Smith 
+        /           span.badge.badge-light-success.fw-bolder.fs-8.px-2.py-1.ms-2
+        /             | Pro
+        /         a.fw-bold.text-muted.text-hover-primary.fs-7[href="#"]
+        /           | max@kt.com
+        /   .separator.my-2
+        /   .menu-item.px-5
+        /     a.menu-link.px-5[href="account/overview.html"]
+        /       | Profile
+        /   .separator.my-2
+        /   .menu-item.px-5
+        /     a.menu-link.px-5[href="#"]
+        /       | Sign Out

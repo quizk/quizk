@@ -1,0 +1,17 @@
+.d-flex.flex-column.flex-root
+  .d-flex.flex-column.flex-column-fluid.bgi-position-y-bottom.position-x-center.bgi-no-repeat.bgi-size-contain.bgi-attachment-fixed style=("background-image: url('https://preview.keenthemes.com/jet-html-free/assets/media/illustrations/sigma-1/14.png')") 
+    .d-flex.flex-center.flex-column.flex-column-fluid.p-10.pb-lg-20
+      .w-lg-500px.bg-white.rounded.shadow-sm.p-10.p-lg-15.mx-auto
+        = simple_form_for resource, as: resource_name, url: session_path(resource_name), html: { class: 'form w-100' } do |f|
+          .text-center.mb-10
+            h1.text-dark.mb-3 Login to Quizk OPS
+          - if flash.alert
+            .alert.alert-danger = flash.alert
+          .mb-10
+            = f.label :username, 'Username', class: 'form-label fw-bolder text-dark fs-6'
+            = f.text_field :username, class: 'form-control form-control-lg form-control-solid', required: true
+          .mb-10
+            = f.label :password, 'Password', class: 'form-label fw-bolder text-dark fs-6'
+            = f.password_field :password, class: 'form-control form-control-lg form-control-solid', required: true
+          .text-center
+            = f.submit 'Continue', class: 'btn btn-lg btn-primary w-100'
