@@ -1,0 +1,36 @@
+- content_for :title, 'Operators'
+
+.card
+  .card-header.d-flex.justify-content-end.border-0.pt-6
+    .card-toolbar
+      = link_to new_operator_path, class: 'btn btn-sm btn-primary me-2'
+        i.fa-solid.fa-plus
+  .card-body.py-4
+    .table-responsive
+      table.table.align-middle.table-row-dashed.fs-6.gy-5
+        thead
+          tr.text-start.text-muted.fw-bolder.fs-7.text-uppercase.gs-0
+            th.min-w-125px
+              | ID
+            th.min-w-125px
+              | Username
+            th.min-w-125px
+              | First Name
+            th.min-w-125px
+              | Last Name
+            th.text-end.min-w-100px
+              | Actions
+        tbody.text-gray-600.fw-bold
+        - @operators.each do |operator|
+          tr[scope='row']
+            td = link_to operator.id, operator_path(operator)
+            td = operator.username
+            td = operator.last_name
+            td = operator.first_name
+            td.text-end.gx-1
+              .d-flex.justify-content-end
+                = link_to edit_operator_path(operator), class: 'btn btn-sm btn-info me-2'
+                  i.fa-solid.fa-pencil
+    .row
+      .col.d-flex.align-items-center.justify-content-end
+        = paginate @operators

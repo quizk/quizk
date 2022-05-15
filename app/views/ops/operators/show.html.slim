@@ -1,0 +1,16 @@
+- content_for :title, 'View Operator'
+
+.card.card-flush
+  .card-header
+    .card-title.m-0
+      h3.fw-bolder.m-0 Profile Details
+    = link_to 'Edit Profile', edit_operator_path(@operator), class: 'btn btn-info align-self-center'
+  .card-body.p-9
+    .row.mb-7
+      label.col-lg-4.fw-bold.text-muted Username
+      .col-lg-8
+        span.fw-bolder.fs-6.text-dark = @operator.username
+    .row.mb-7
+      label.col-lg-4.fw-bold.text-muted Full Name
+      .col-lg-8
+        span.fw-bolder.fs-6.text-dark = "#{@operator.last_name} #{@operator.first_name}"

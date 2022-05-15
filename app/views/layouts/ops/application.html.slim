@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    meta content=('text/html; charset=UTF-8') http-equiv='Content-Type'
+    title = content_for?(:title) ? "Quizk OPS - #{yield(:title)}" : 'Quizk OPS'
+    = favicon_link_tag '/favicon.ico'
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
+    = javascript_importmap_tags
+  body.header-fixed.header-tablet-and-mobile-fixed.aside-fixed.aside-secondary-disabled
+    .d-flex.flex-column.flex-root
+      .page.d-flex.flex-row.flex-column-fluid
+        = render partial: 'layouts/ops/sidebar'
+        .wrapper.d-flex.flex-column.flex-row-fluid
+          = render partial: 'layouts/ops/header'
+          .content.d-flex.flex-column.flex-column-fluid
+            .container
+              = render partial: 'layouts/ops/flash_messages'
+              = yield
+          = render partial: 'layouts/ops/footer'
