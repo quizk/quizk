@@ -3,12 +3,12 @@
     .page-title.d-flex.flex-column.align-items-start.justify-content-center.flex-wrap.me-lg-2.pb-2.pb-lg-0
       h1.text-dark.fw-bolder.my-1.fs-2
         = content_for?(:title) ? yield(:title) : 'Dashboard'
-      / ul.breadcrumb.fw-bold.fs-base.my-1
-      /   li.breadcrumb-item.text-muted
-      /     a.text-muted[href="index.html"]
-      /       | Home
-      /   li.breadcrumb-item.text-dark
-      /     | Dashboard
+      ul.breadcrumb.fw-bold.fs-base.my-1
+        - breadcrumbs[0...-1].tap do |links|
+          - links.each do |link|
+            li.breadcrumb-item.text-muted
+              a.text-muted[href="#{link.url}"] = link.text
+          li.breadcrumb-item.text-dark = breadcrumbs.last.text
     .d-flex.align-items-stretch.flex-shrink-0
       .d-flex.align-items-center.ms-1.ms-lg-3
         .cursor-pointer.symbol.symbol-30px.symbol-md-40px
