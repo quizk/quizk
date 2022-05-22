@@ -4,32 +4,27 @@
       h1.text-dark.fw-bolder.my-1.fs-2
         = content_for?(:title) ? yield(:title) : 'Dashboard'
       ul.breadcrumb.fw-bold.fs-base.my-1
-        - breadcrumbs[0...-1].tap do |links|
+        - breadcrumbs.tap do |links|
           - links.each do |link|
-            li.breadcrumb-item.text-muted
-              a.text-muted[href="#{link.url}"] = link.text
-          li.breadcrumb-item.text-dark = breadcrumbs.last.text
+            - if link == links.last
+              li.breadcrumb-item.text-dark = breadcrumbs.last.text
+            - else
+              li.breadcrumb-item.text-muted
+                a.text-muted[href="#{link.url}"] = link.text
     .d-flex.align-items-stretch.flex-shrink-0
       .d-flex.align-items-center.ms-1.ms-lg-3
-        .cursor-pointer.symbol.symbol-30px.symbol-md-40px
+        .cursor-pointer.symbol.symbol-35px.symbol-md-40px[data-kt-menu-trigger='click' data-kt-menu-attach='parent' data-kt-menu-placement='bottom-end' data-kt-menu-flip='bottom']
           = image_tag 'public/avatar.jpg'
-        / .menu.menu-sub.menu-sub-dropdown.menu-column.menu-rounded.menu-gray-600.menu-state-bg-light-primary.fw-bold.py-4.fs-6.w-275px
-        /   .menu-item.px-3
-        /     .menu-content.d-flex.align-items-center.px-3
-        /       .symbol.symbol-50px.me-5
-        /         = image_tag 'public/avatar.jpg'
-        /       .d-flex.flex-column
-        /         .fw-bolder.d-flex.align-items-center.fs-5
-        /           | Max Smith 
-        /           span.badge.badge-light-success.fw-bolder.fs-8.px-2.py-1.ms-2
-        /             | Pro
-        /         a.fw-bold.text-muted.text-hover-primary.fs-7[href="#"]
-        /           | max@kt.com
-        /   .separator.my-2
-        /   .menu-item.px-5
-        /     a.menu-link.px-5[href="account/overview.html"]
-        /       | Profile
-        /   .separator.my-2
-        /   .menu-item.px-5
-        /     a.menu-link.px-5[href="#"]
-        /       | Sign Out
+        .menu.menu-sub.menu-sub-dropdown.menu-column.menu-rounded.menu-gray-800.menu-state-bg.menu-state-primary.fw-bold.py-4.fs-6.w-275px[data-kt-menu='true']
+          .menu-item.px-3
+            .menu-content.d-flex.align-items-center.px-3
+              .symbol.symbol-50px.me-5
+                = image_tag 'public/avatar.jpg'
+              .d-flex.flex-column
+                .fw-bolder.d-flex.align-items-center.fs-5 = current_operator.full_name
+                .fw-bold.text-muted.text-hover-primary.fs-7 = current_operator.username
+          .separator.my-2
+          .menu-item.px-5
+            = link_to 'My Profile', operator_path(@current_operator), class: 'menu-link px-5'
+          .menu-item.px-5
+            = button_to 'Sign Out', destroy_operator_session_path, method: :delete, class: 'form-control form-control-flush menu-link px-5'

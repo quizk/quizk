@@ -23,4 +23,8 @@ class Operator < ApplicationRecord
 
   validates :username, :first_name, :last_name, presence: true
   validates :password_confirmation, presence: true, if: :password
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

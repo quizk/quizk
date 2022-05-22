@@ -33989,7 +33989,7 @@ a:hover {
 }
 
 .menu-rounded .menu-link {
-  border-radius: 0.475rem;
+  border-radius: 0.475rem !important;
 }
 
 .menu-pill .menu-link {
