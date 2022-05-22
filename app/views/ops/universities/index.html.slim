@@ -1,0 +1,37 @@
+- content_for :title, 'Universities'
+- breadcrumb :universities
+
+.card
+  .card-header.d-flex.justify-content-end.border-0.pt-6
+    .card-toolbar
+      = link_to new_university_path, class: 'btn btn-sm btn-primary me-2'
+        i.fa-solid.fa-plus
+  .card-body.py-4
+    .table-responsive
+      table.table.align-middle.table-row-dashed.fs-6.gy-5
+        thead
+          tr.text-start.text-muted.fw-bolder.fs-7.text-uppercase.gs-0
+            th.min-w-125px
+              | ID
+            th.min-w-125px
+              | Name
+            th.text-end.min-w-100px
+              | Actions
+        tbody.text-gray-600.fw-bold
+        - @universities.each do |university|
+          tr[scope='row']
+            td = link_to university.id, university_path(university)
+            td = university.name
+            td.text-end.gx-1
+              .d-flex.justify-content-end
+                = link_to edit_university_path(university), class: 'btn btn-sm btn-info me-2'
+                  i.fa-solid.fa-pencil
+                - if university.discarded?
+                  = button_to restore_university_path(university), method: :post, class: 'btn btn-sm btn-success me-2' do
+                    i.fa-solid.fa-rotate-left
+                - else 
+                  = button_to university_path(university), method: :delete, class: 'btn btn-sm btn-danger me-2' do
+                    i.fa-solid.fa-trash
+    .row
+      .col.d-flex.align-items-center.justify-content-end
+        = paginate @universities

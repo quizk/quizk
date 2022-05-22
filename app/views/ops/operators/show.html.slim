@@ -14,4 +14,4 @@
     .row.mb-7
       label.col-lg-4.fw-bold.text-muted Full Name
       .col-lg-8
-        span.fw-bolder.fs-6.text-dark = "#{@operator.last_name} #{@operator.first_name}"
+        span.fw-bolder.fs-6.text-dark = @operator.full_name

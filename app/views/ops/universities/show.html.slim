@@ -1,0 +1,13 @@
+- content_for :title, 'View University'
+- breadcrumb :university, @university
+
+.card.card-flush
+  .card-header
+    .card-title.m-0
+      h3.fw-bolder.m-0 Profile Details
+    = link_to 'Edit Profile', edit_university_path(@university), class: 'btn btn-info align-self-center'
+  .card-body.p-9
+    .row.mb-7
+      label.col-lg-4.fw-bold.text-muted Name
+      .col-lg-8
+        span.fw-bolder.fs-6.text-dark = @university.name

@@ -13,8 +13,8 @@ gem 'rails', '~> 7.0', '>= 7.0.2.4'
 #
 # Database, ORM, Model, etc
 #
-gem 'mysql2', '~> 0.5.3'
 gem 'discard', '~> 1.2'
+gem 'mysql2', '~> 0.5.3'
 
 #
 # Web servers
