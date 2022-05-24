@@ -1,9 +1,9 @@
 doctype html
-html
+html lang='en'
   head
     meta content=('text/html; charset=UTF-8') http-equiv='Content-Type'
     title = content_for?(:title) ? "Quizk OPS - #{yield(:title)}" : 'Quizk OPS'
-    = favicon_link_tag '/favicon.ico'
+    = favicon_link_tag '/logo.png'
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'

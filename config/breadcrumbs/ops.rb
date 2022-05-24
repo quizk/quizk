@@ -43,3 +43,24 @@ crumb :edit_university do |university|
   link t('breadcrumbs.edit_university'), edit_university_path(university)
   parent :university, university
 end
+
+# Category
+crumb :categories do
+  link t('breadcrumbs.categories'), categories_path
+  parent :ops_root
+end
+
+crumb :category do |category|
+  link category.id, category_path(category)
+  parent :categories
+end
+
+crumb :new_category do
+  link t('breadcrumbs.new_category'), new_category_path
+  parent :categories
+end
+
+crumb :edit_category do |category|
+  link t('breadcrumbs.edit_category'), edit_category_path(category)
+  parent :category, category
+end

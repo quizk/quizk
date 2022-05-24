@@ -1,0 +1,11 @@
+en:
+  ops:
+    categories:
+      index:
+        title: Categories
+      show:
+        title: View Category
+      new:
+        title: New Category
+      edit:
+        title: Edit Category

@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
     resources :operators, only: %i[index show new create edit update]
     resources :universities, concerns: :trashable
+    resources :categories
   end
 end
