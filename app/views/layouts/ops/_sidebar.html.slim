@@ -2,15 +2,18 @@
   .aside-primary.d-flex.flex-column.align-items-lg-center.flex-row-auto
     .aside-logo.d-none.d-lg-flex.flex-column.align-items-center.flex-column-auto.pt-10
       = link_to root_path do
-        = image_tag 'public/logo.jpg', class: 'h-55px'
+        = image_tag 'public/logo.png', class: 'h-55px'
     .aside-nav.d-flex.flex-column.flex-lg-center.flex-column-fluid.w-100.pt-5.pt-lg-0
       .menu.menu-column.menu-title-gray-600.menu-icon-gray-400.menu-state-primary.menu-state-icon-primary.menu-state-bullet-primary.menu-arrow-gray-500.fw-bold.fs-5
         .menu-item.fs-1.py-2
-          = link_to root_path, class: 'menu-link menu-center' do
+          = link_to root_path, title: t('sidebar.dashboard'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
             i.fa-solid.fa-house
         .menu-item.fs-1.py-2
-          = link_to operators_path, class: 'menu-link menu-center' do
+          = link_to operators_path, title: t('sidebar.operators'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
             i.fa-solid.fa-people-group
         .menu-item.fs-1.py-2
-          = link_to universities_path, class: 'menu-link menu-center' do
+          = link_to universities_path, title: t('sidebar.universities'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
             i.fa-solid.fa-school
+        .menu-item.fs-1.py-2
+          = link_to categories_path, title: t('sidebar.categories'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
+            i.fa-solid.fa-box
