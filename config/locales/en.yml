@@ -1,13 +1,5 @@
 en:
-  flashes:
-    created: Created
-    updated: Updated
-    deleted: Deleted
-    disabled: Disabled
-    enabled: Enabled
-  ops:
-    breadcrumbs:
-      home: HOME
-      operators: Operators
-      new_operator: New Operator
-      edit_operator: Edit Operator
+  id: ID
+  actions: Actions
+  discard: Discard
+  save_changes: Save Changes

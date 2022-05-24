@@ -1,11 +1,13 @@
+- model_scope = 'activerecord.attributes.operator'
+
 = simple_form_for @operator do |f|
   .card-body.border-top.p-9
     .row.mb-6
-      = f.label :username, 'Username', class: 'col-lg-4 col-form-label required fw-bold fs-6'
+      = f.label :username, t('username', scope: model_scope), class: 'col-lg-4 col-form-label required fw-bold fs-6'
       .col-8
         = f.text_field :username, class: 'form-control form-control-lg form-control-solid'
     .row.mb-6
-      = f.label '', 'Full Name', class: 'col-lg-4 col-form-label required fw-bold fs-6'
+      = f.label '', t('full_name', scope: model_scope), class: 'col-lg-4 col-form-label required fw-bold fs-6'
       .col-lg-8
         .row
           .col-lg-6
@@ -13,13 +15,13 @@
           .col-lg-6
             = f.text_field :last_name, class: 'form-control form-control-lg form-control-solid'
     .row.mb-6
-      = f.label :password, 'Password', class: 'col-lg-4 col-form-label fw-bold fs-6'
+      = f.label :password, t('password', scope: model_scope), class: 'col-lg-4 col-form-label fw-bold fs-6'
       .col-8
         = f.password_field :password, class: 'form-control form-control-lg form-control-solid'
     .row.mb-6
-      = f.label :password_confirmation, 'Password Confirmation', class: 'col-lg-4 col-form-label fw-bold fs-6'
+      = f.label :password_confirmation, t('password_confirmation', scope: model_scope), class: 'col-lg-4 col-form-label fw-bold fs-6'
       .col-8
         = f.password_field :password_confirmation, class: 'form-control form-control-lg form-control-solid'
   .card-footer.d-flex.justify-content-end.py-6.px-9
-    = link_to 'Discard', :back, class: 'btn btn-light btn-active-light-primary me-2'
-    = f.submit 'Save Changes', class: 'btn btn-primary'
+    = link_to t('discard'), :back, class: 'btn btn-light btn-active-light-primary me-2'
+    = f.submit t('save_changes'), class: 'btn btn-primary'

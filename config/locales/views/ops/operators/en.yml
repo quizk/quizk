@@ -1,0 +1,11 @@
+en:
+  ops:
+    operators:
+      index:
+        title: Operators
+      show:
+        title: View Operator
+      new:
+        title: New Operator
+      edit:
+        title: Edit Operator

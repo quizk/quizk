@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    models:
+      university: University
+    attributes:
+      university:
+        name: Name

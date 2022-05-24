@@ -1,17 +1,17 @@
-- content_for :title, 'View Operator'
+- model_scope = 'activerecord.attributes.operator'
+- content_for :title, t('.title')
 - breadcrumb :operator, @operator
 
 .card.card-flush
   .card-header
-    .card-title.m-0
-      h3.fw-bolder.m-0 Profile Details
-    = link_to 'Edit Profile', edit_operator_path(@operator), class: 'btn btn-info align-self-center'
+    = link_to edit_operator_path(@operator), class: 'btn btn btn-info align-self-center ms-auto'
+      i.fa-solid.fa-pencil
   .card-body.p-9
     .row.mb-7
-      label.col-lg-4.fw-bold.text-muted Username
+      label.col-lg-4.fw-bold.text-muted = t('username', scope: model_scope)
       .col-lg-8
         span.fw-bolder.fs-6.text-dark = @operator.username
     .row.mb-7
-      label.col-lg-4.fw-bold.text-muted Full Name
+      label.col-lg-4.fw-bold.text-muted = t('full_name', scope: model_scope)
       .col-lg-8
         span.fw-bolder.fs-6.text-dark = @operator.full_name
