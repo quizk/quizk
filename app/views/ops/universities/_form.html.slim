@@ -1,7 +1,9 @@
+- model_scope = 'activerecord.attributes.university'
+
 = simple_form_for @university do |f|
   .card-body.border-top.p-9
     .row.mb-6
-      = f.label :name, 'Name', class: 'col-lg-4 col-form-label required fw-bold fs-6'
+      = f.label :name, t('name', scope: model_scope), class: 'col-lg-4 col-form-label required fw-bold fs-6'
       .col-8
         = f.text_field :name, class: 'form-control form-control-lg form-control-solid'
   .card-footer.d-flex.justify-content-end.py-6.px-9

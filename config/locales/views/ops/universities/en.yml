@@ -1,0 +1,11 @@
+en:
+  ops:
+    universities:
+      index:
+        title: Universities
+      show:
+        title: View University
+      new:
+        title: New University
+      edit:
+        title: Edit University

@@ -1,4 +1,5 @@
-- content_for :title, 'Operators'
+- model_scope = 'activerecord.attributes.operator'
+- content_for :title, t('.title')
 - breadcrumb :operators
 
 .card
@@ -11,16 +12,11 @@
       table.table.align-middle.table-row-dashed.fs-6.gy-5
         thead
           tr.text-start.text-muted.fw-bolder.fs-7.text-uppercase.gs-0
-            th.min-w-125px
-              | ID
-            th.min-w-125px
-              | Username
-            th.min-w-125px
-              | First Name
-            th.min-w-125px
-              | Last Name
-            th.text-end.min-w-100px
-              | Actions
+            th.min-w-125px = t('id')
+            th.min-w-125px = t('username', scope: model_scope)
+            th.min-w-125px = t('first_name', scope: model_scope)
+            th.min-w-125px = t('last_name', scope: model_scope)
+            th.text-end.min-w-100px = t('actions')
         tbody.text-gray-600.fw-bold
         - @operators.each do |operator|
           tr[scope='row']

@@ -1,4 +1,5 @@
-- content_for :title, 'Universities'
+- model_scope = 'activerecord.attributes.university'
+- content_for :title, t('.title')
 - breadcrumb :universities
 
 .card
@@ -11,12 +12,9 @@
       table.table.align-middle.table-row-dashed.fs-6.gy-5
         thead
           tr.text-start.text-muted.fw-bolder.fs-7.text-uppercase.gs-0
-            th.min-w-125px
-              | ID
-            th.min-w-125px
-              | Name
-            th.text-end.min-w-100px
-              | Actions
+            th.min-w-125px = t('id')
+            th.min-w-125px = t('name', scope: model_scope)
+            th.text-end.min-w-100px = t('action')
         tbody.text-gray-600.fw-bold
         - @universities.each do |university|
           tr[scope='row']
