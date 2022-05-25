@@ -1,0 +1,14 @@
+en:
+  ops:
+    questions:
+      index:
+        title: Questions
+      show:
+        title: View Question
+        category: Category
+      new:
+        title: New Question
+      edit:
+        title: Edit Question
+      form:
+        category: Category

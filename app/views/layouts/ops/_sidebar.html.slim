@@ -17,3 +17,6 @@
         .menu-item.fs-1.py-2
           = link_to categories_path, title: t('sidebar.categories'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
             i.fa-solid.fa-box
+        .menu-item.fs-1.py-2
+          = link_to questions_path, title: t('sidebar.question_answer'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
+            i.fa-solid.fa-question

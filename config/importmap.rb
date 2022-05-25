@@ -5,8 +5,7 @@ pin 'popper', to: 'popper.js', preload: true
 pin 'bootstrap', to: 'bootstrap.min.js', preload: true
 pin 'jet-theme-scripts', to: 'jet-theme/scripts.bundle.js'
 
-pin '@fortawesome/fontawesome-free', to: 'https://ga.jspm.io/npm:@fortawesome/fontawesome-free@6.1.1/js/fontawesome.js'
-pin '@fortawesome/fontawesome-svg-core', to: 'https://ga.jspm.io/npm:@fortawesome/fontawesome-svg-core@6.1.1/index.es.js'
-pin '@fortawesome/free-brands-svg-icons', to: 'https://ga.jspm.io/npm:@fortawesome/free-brands-svg-icons@6.1.1/index.es.js'
-pin '@fortawesome/free-regular-svg-icons', to: 'https://ga.jspm.io/npm:@fortawesome/free-regular-svg-icons@6.1.1/index.es.js'
-pin '@fortawesome/free-solid-svg-icons', to: 'https://ga.jspm.io/npm:@fortawesome/free-solid-svg-icons@6.1.1/index.es.js'
+pin '@fortawesome/fontawesome-free', to: '@fortawesome--fontawesome-free.js' # @6.1.1
+pin '@fortawesome/fontawesome-svg-core', to: '@fortawesome--fontawesome-svg-core.js' # @6.1.1
+pin '@fortawesome/free-solid-svg-icons', to: '@fortawesome--free-solid-svg-icons.js' # @6.1.1
+pin 'jquery', preload: true # @3.6.0
