@@ -35,8 +35,8 @@ module Ops
     end
 
     def destroy
-      @category.discard
-      redirect_to categories_path, notice: t('flashes.disabled')
+      @category.destroy
+      redirect_to categories_path, notice: t('flashes.deleted')
     end
 
   private

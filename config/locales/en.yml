@@ -1,5 +1,4 @@
 en:
   id: ID
   actions: Actions
-  discard: Discard
-  save_changes: Save Changes
+  correct: Correct

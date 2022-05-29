@@ -1,0 +1,15 @@
+= turbo_frame_tag answer
+  .card.card-flush.mt-10
+    .card-header
+      .card-title.m-0
+        h3.fw-bolder.me-6 = "#{t('activerecord.models.answer')}"
+        = answer.status_with_icon
+      .card-toolbar
+        = link_to edit_question_answer_path(@question, answer), class: 'btn btn-light-info me-2'
+          i.fa-solid.fa-pencil
+        = button_to question_answer_path(@question, answer), method: :delete, class: 'btn btn-light-danger' do
+          i.fa-solid.fa-trash
+    .card-body.py-0
+      .row.mb-6.align-items-center
+        .col-12
+          = raw answer.content

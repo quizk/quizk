@@ -2,21 +2,23 @@
 - content_for :title, t('.title')
 - breadcrumb :question, @question
 
-.card.card-flush
-  .card-header
-    = link_to edit_question_path(@question), class: 'btn btn btn-info align-self-center ms-auto'
-      i.fa-solid.fa-pencil
-  .card-body.p-9
-    .row.mb-7
-      label.col-lg-4.fw-bold.text-muted = t('.category')
-      .col-lg-8
-        span.fw-bolder.fs-6.text-dark = @question.category.name
-    .row.mb-7
-      label.col-lg-4.fw-bold.text-muted = t('title', scope: model_scope)
-      .col-lg-8
-        span.fw-bolder.fs-6.text-dark = @question.title
-    .row.mb-7
-      label.col-lg-4.fw-bold.text-muted = t('image', scope: model_scope)
-      .col-lg-8
-        .symbol.symbol-150px
-          = image_tag @question.image
+= turbo_frame_tag :question
+  .card.card-flush
+    .card-header
+      .card-title.m-0
+        h3.fw-bolder.m-0 = t('activerecord.models.question')
+      .card-toolbar
+        = link_to edit_question_path(@question), class: 'btn btn btn-light-info align-self-center ms-auto'
+          i.fa-solid.fa-pencil
+    .card-body.p-9
+      .row.mb-7
+        label.col-lg-4.fw-bold.text-muted = t('.category')
+        .col-lg-8
+          span.fw-bolder.fs-6.text-dark = @question.category.name
+      .row.mb-7
+        label.col-lg-4.fw-bold.text-muted = t('content', scope: model_scope)
+        .col-lg-8
+          = raw @question.content
+#answers
+  = render @question.answers
+= turbo_frame_tag Answer.new, src: new_question_answer_path(@question)

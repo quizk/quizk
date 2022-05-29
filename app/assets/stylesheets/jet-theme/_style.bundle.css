@@ -5005,6 +5005,10 @@ textarea.form-control-lg {
   padding: 1.25rem 1rem;
 }
 
+.alert-autodismiss {
+  animation: appearThenFade 4s both;
+}
+
 .alert-white {
   color: #666666;
   background-color: white;
@@ -33487,6 +33491,15 @@ a:hover {
 }
 .animation-fade-out {
   animation-name: animationFadeOut;
+}
+
+@keyframes appearThenFade {
+  0%, 100% {
+    opacity:0
+  }
+  5%, 60% {
+    opacity:1
+  }
 }
 
 .animation-blink {

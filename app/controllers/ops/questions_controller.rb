@@ -35,8 +35,8 @@ module Ops
     end
 
     def destroy
-      @question.discard
-      redirect_to questions_path, notice: t('flashes.disabled')
+      @question.destroy
+      redirect_to questions_path, notice: t('flashes.deleted')
     end
 
   private
@@ -46,7 +46,7 @@ module Ops
     end
 
     def question_params
-      params.require(:question).permit(:category_id, :title, :image)
+      params.require(:question).permit(:category_id, :content)
     end
   end
 end

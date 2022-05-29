@@ -23,5 +23,7 @@
       .col-8
         = f.password_field :password_confirmation, class: 'form-control form-control-lg form-control-solid'
   .card-footer.d-flex.justify-content-end.py-6.px-9
-    = link_to t('discard'), :back, class: 'btn btn-light btn-active-light-primary me-2'
-    = f.submit t('save_changes'), class: 'btn btn-primary'
+    = link_to :back, class: 'btn btn-light btn-active-light-secondary me-2'
+      i.fa-solid.fa-arrow-left
+    = button_tag class: 'btn btn-primary' do
+      i.fa-solid.fa-check

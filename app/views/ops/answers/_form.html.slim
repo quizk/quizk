@@ -1,0 +1,14 @@
+= simple_form_for [@question, @answer], html: { class: 'card card-flush mt-10' }, data: { controller: :form, action: 'turbo:submit-end->form#clear' } do |f|
+  .card-header
+    .card-title.m-0
+      h3.fw-bolder.me-6 = "#{t('activerecord.models.answer')}"
+      .form-check.form-switch.form-check-custom.form-check-solid.form-check-success
+        = f.check_box :status, { class: 'form-check-input h-20px w-30px', id: 'switch-status', checked: @answer.right? }, :right, :wrong
+        label.fw-light.fst-italic.form-check-label[for='switch-status'] = t('correct')
+    .card-toolbar
+      = button_tag class: 'btn btn-primary' do
+        i.fa-solid.fa-check
+  .card-body.py-0
+    .row.mb-6.align-items-center
+      .col-12
+        = f.rich_text_area :content, class: 'form-control form-control-solid'
