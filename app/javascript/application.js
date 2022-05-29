@@ -10,3 +10,8 @@ library.add(fas)
 
 import jQuery from 'jquery'
 window.$ = jQuery
+
+import 'controllers'
+import '@hotwired/turbo-rails'
+import 'trix'
+import '@rails/actiontext'

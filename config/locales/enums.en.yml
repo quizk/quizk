@@ -1,0 +1,6 @@
+en:
+  enums:
+    answer:
+      status:
+        wrong: Wrong
+        right: Right

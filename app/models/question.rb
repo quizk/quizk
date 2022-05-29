@@ -3,10 +3,9 @@
 # Table name: questions
 #
 #  id          :bigint           not null, primary key
-#  title       :string(255)
+#  category_id :bigint           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#  category_id :bigint           not null
 #
 # Indexes
 #
@@ -18,6 +17,7 @@
 #
 class Question < ApplicationRecord
   belongs_to :category
+  has_many :answers, dependent: :destroy
 
-  has_one_attached :image
+  has_rich_text :content
 end

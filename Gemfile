@@ -20,10 +20,13 @@ gem 'mysql2', '~> 0.5.3'
 # Web servers
 #
 gem 'puma', '~> 5.6', '>= 5.6.4'
+gem 'redis', '~> 4.0'
 
 #
 # Views
 #
+gem 'active_decorator', '~> 1.4'
+gem 'active_model_serializers', '~> 0.10.13'
 gem 'bootstrap', '~> 5.1', '>= 5.1.3'
 gem 'gretel', '~> 3.0', '>= 3.0.9'
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
@@ -44,9 +47,12 @@ gem 'pundit', '~> 2.2'
 #
 # Others
 #
-gem 'active_model_serializers', '~> 0.10.13'
+gem 'enum_help', '~> 0.0.17'
+gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem 'importmap-rails', '~> 1.0'
 gem 'rubocop-rails', '~> 2.13', '>= 2.13.2', require: false
+gem 'stimulus-rails', '~> 1.0', '>= 1.0.4'
+gem 'turbo-rails', '~> 1.1', '>= 1.1.1'
 
 group :development do
   gem 'annotate', '~> 3.2'

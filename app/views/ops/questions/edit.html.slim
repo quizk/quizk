@@ -1,4 +1,2 @@
-- content_for :title, t('.title')
-- breadcrumb :edit_question, @question
-
-= render partial: 'form'
+= turbo_frame_tag :question
+  = render partial: 'form'

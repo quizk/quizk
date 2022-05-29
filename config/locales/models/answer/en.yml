@@ -1,7 +1,8 @@
 en:
   activerecord:
     models:
-      question: Question
+      answer: Answer
     attributes:
-      question:
+      answer:
         content: Content
+        status: Status
