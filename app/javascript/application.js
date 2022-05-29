@@ -3,9 +3,10 @@ import 'popper'
 import 'bootstrap'
 import 'jet-theme-scripts'
 
-import { far } from '@fortawesome/free-regular-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { library } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-free'
-library.add(far, fas, fab)
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+library.add(fas)
+
+import jQuery from 'jquery'
+window.$ = jQuery

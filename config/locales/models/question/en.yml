@@ -1,0 +1,8 @@
+en:
+  activerecord:
+    models:
+      question: Question
+    attributes:
+      question:
+        title: Title
+        image: Image

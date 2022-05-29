@@ -1,7 +1,7 @@
 - model_scope = 'activerecord.attributes.operator'
 
-= simple_form_for @operator do |f|
-  .card-body.border-top.p-9
+= simple_form_for @operator, html: { class: 'card card-flush' } do |f|
+  .card-body.p-9
     .row.mb-6
       = f.label :username, t('username', scope: model_scope), class: 'col-lg-4 col-form-label required fw-bold fs-6'
       .col-8

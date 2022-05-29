@@ -64,3 +64,24 @@ crumb :edit_category do |category|
   link t('breadcrumbs.edit_category'), edit_category_path(category)
   parent :category, category
 end
+
+# Question
+crumb :questions do
+  link t('breadcrumbs.questions'), questions_path
+  parent :ops_root
+end
+
+crumb :question do |question|
+  link question.id, question_path(question)
+  parent :questions
+end
+
+crumb :new_question do
+  link t('breadcrumbs.new_question'), new_question_path
+  parent :questions
+end
+
+crumb :edit_question do |question|
+  link t('breadcrumbs.edit_question'), edit_question_path(question)
+  parent :question, question
+end
