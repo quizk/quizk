@@ -46,7 +46,7 @@ module Ops
     end
 
     def question_params
-      params.require(:question).permit(:category_id, :content)
+      params.require(:question).permit(:topic_id, :content)
     end
   end
 end

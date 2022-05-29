@@ -6,10 +6,10 @@
       h3.fw-bolder.m-0 = t('activerecord.models.question')
   .card-body.p-9
     .row.mb-6
-      = f.label :category, t('.category'), class: 'col-lg-4 col-form-label required fw-bold fs-6'
+      = f.label :topic, t('.topic'), class: 'col-lg-4 col-form-label required fw-bold fs-6'
       .col-8
-        = f.select :category_id,
-                    options_for_select(Category.all.map { |c| [c.name, c.id] }, @question.category_id),
+        = f.select :topic_id,
+                    options_for_select(Topic.all.map { |c| [c.name, c.id] }, @question.topic_id),
                     {},
                     { class: 'form-select form-select-lg form-select-solid' }
     .row.mb-6

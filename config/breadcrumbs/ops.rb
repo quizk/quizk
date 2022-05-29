@@ -44,25 +44,25 @@ crumb :edit_university do |university|
   parent :university, university
 end
 
-# Category
-crumb :categories do
-  link t('breadcrumbs.categories'), categories_path
+# Topic
+crumb :topics do
+  link t('breadcrumbs.topics'), topics_path
   parent :ops_root
 end
 
-crumb :category do |category|
-  link category.id, category_path(category)
-  parent :categories
+crumb :topic do |topic|
+  link topic.id, topic_path(topic)
+  parent :topics
 end
 
-crumb :new_category do
-  link t('breadcrumbs.new_category'), new_category_path
-  parent :categories
+crumb :new_topic do
+  link t('breadcrumbs.new_topic'), new_topic_path
+  parent :topics
 end
 
-crumb :edit_category do |category|
-  link t('breadcrumbs.edit_category'), edit_category_path(category)
-  parent :category, category
+crumb :edit_topic do |topic|
+  link t('breadcrumbs.edit_topic'), edit_topic_path(topic)
+  parent :topic, topic
 end
 
 # Question

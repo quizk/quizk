@@ -1,0 +1,11 @@
+en:
+  ops:
+    topics:
+      index:
+        title: Topics
+      show:
+        title: View Topic
+      new:
+        title: New Topic
+      edit:
+        title: Edit Topic
