@@ -2,21 +2,21 @@
 #
 # Table name: questions
 #
-#  id          :bigint           not null, primary key
-#  category_id :bigint           not null
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id         :bigint           not null, primary key
+#  topic_id   :bigint           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 # Indexes
 #
-#  index_questions_on_category_id  (category_id)
+#  index_questions_on_topic_id  (topic_id)
 #
 # Foreign Keys
 #
-#  fk_rails_...  (category_id => categories.id)
+#  fk_rails_...  (topic_id => topics.id)
 #
 class Question < ApplicationRecord
-  belongs_to :category
+  belongs_to :topic
   has_many :answers, dependent: :destroy
 
   has_rich_text :content

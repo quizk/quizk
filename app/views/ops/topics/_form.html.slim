@@ -1,6 +1,6 @@
-- model_scope = 'activerecord.attributes.category'
+- model_scope = 'activerecord.attributes.topic'
 
-= simple_form_for @category, html: { class: 'card card-flush' } do |f|
+= simple_form_for @topic, html: { class: 'card card-flush' } do |f|
   .card-body.p-9
     .row.mb-6
       = f.label :name, t('name', scope: model_scope), class: 'col-lg-4 col-form-label required fw-bold fs-6'

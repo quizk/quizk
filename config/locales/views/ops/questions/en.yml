@@ -5,10 +5,10 @@ en:
         title: Questions
       show:
         title: View Question
-        category: Category
+        topic: Topic
       new:
         title: New Question
       edit:
         title: Edit Question
       form:
-        category: Category
+        topic: Topic
