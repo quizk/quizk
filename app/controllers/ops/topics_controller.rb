@@ -18,25 +18,33 @@ module Ops
       @topic = Topic.new(topic_params)
 
       if @topic.save
-        redirect_to @topic, notice: t('flashes.created')
+        respond_to do |format|
+          format.turbo_stream
+        end
       else
-        flash[:error] = @topic.errors.full_messages.join(', ')
-        render :new, status: :unprocessable_entity
+        respond_to do |format|
+          format.turbo_stream { flash[:error] = @topic.errors.full_messages.join(', ') }
+        end
       end
     end
 
     def update
       if @topic.update(topic_params)
-        redirect_to @topic, notice: t('flashes.updated')
+        respond_to do |format|
+          format.turbo_stream
+        end
       else
-        flash[:error] = @topic.errors.full_messages.join(', ')
-        render :edit, status: :unprocessable_entity
+        respond_to do |format|
+          format.turbo_stream { flash[:error] = @topic.errors.full_messages.join(', ') }
+        end
       end
     end
 
     def destroy
       @topic.destroy
-      redirect_to topics_path, notice: t('flashes.deleted')
+      respond_to do |format|
+        format.turbo_stream
+      end
     end
 
   private
