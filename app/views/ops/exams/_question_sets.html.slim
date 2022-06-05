@@ -1,0 +1,6 @@
+.card-body.p-9.border-bottom
+  .d-flex.d-flex-wrap.gap-4[id="#{dom_id(exam)}_question_sets"]
+    = render exam.question_sets, exam: exam
+  .d-flex.justify-content-start.align-items-center.gap-4.mt-10
+    h3.fw-bolder.m-0 = "#{t('activerecord.models.question_set')}"
+    = turbo_frame_tag QuestionSet.new, src: new_exam_question_set_path(exam)

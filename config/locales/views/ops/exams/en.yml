@@ -1,0 +1,12 @@
+en:
+  ops:
+    exams:
+      index:
+        title: Exams
+      show:
+        title: View Exam
+        topic: Topic
+      new:
+        title: New Exam
+      edit:
+        title: Edit Exam

@@ -8,7 +8,8 @@
 #  updated_at :datetime         not null
 #
 class Topic < ApplicationRecord
-  validates :name, presence: true
-
   has_many :topics, dependent: :destroy
+  has_many :question_sets, dependent: :destroy
+
+  validates :name, presence: true
 end

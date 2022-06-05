@@ -1,0 +1,8 @@
+- model_scope = 'activerecord.attributes.exam'
+- content_for :title, t('.title')
+- breadcrumb :exams
+
+.row.mb-10
+  = turbo_frame_tag Exam.new, src: new_exam_path(@exam)
+#exams.row.g-5
+  = render partial: 'exam', collection: @exams

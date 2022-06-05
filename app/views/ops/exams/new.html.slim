@@ -1,0 +1,13 @@
+- model_scope = 'activerecord.attributes.exam'
+
+= turbo_frame_tag @exam
+  = simple_form_for @exam, html: { class: 'card card-flush' }, data: { controller: :form, action: 'turbo:submit-end->form#clear' } do |f|
+    .card-header
+      .card-title.gap-2.m-0
+        h3.fw-bolder.w-100.m-0 = t('.title')
+        = f.text_field :title, class: 'form-control form-control-solid'
+        = f.number_field :time_limit, class: 'form-control form-control-solid w-25'
+        .fw-normal.fs-base = t('time_unit.minutes')
+      .card-toolbar
+        = button_tag class: 'btn btn-primary' do
+          i.fa-solid.fa-check

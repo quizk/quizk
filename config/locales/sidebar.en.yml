@@ -3,5 +3,6 @@ en:
     dashboard: Dashboard
     operators: Operators
     universities: Universities
+    exams: Exams
     topics: Topics
-    question_answer: Questions
+    questions: Questions
