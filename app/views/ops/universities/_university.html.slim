@@ -1,0 +1,18 @@
+= turbo_frame_tag university, class: 'col-md-6'
+  .card
+    .card-body.p-9.border-bottom
+      .d-flex.justify-content-between.align-items-center
+        h1.m-0
+          - if university.discarded?
+            span.text-secondary = university.name
+            i.fa-solid.fa-circle-minus.ms-2.text-secondary
+          - else
+            span = university.name
+        - if university.discarded?
+          = button_to restore_university_path(university), method: :post, class: 'btn btn-light-success' do
+            i.fa-solid.fa-rotate-left
+        - else
+          = link_to edit_university_path(university), class: 'btn btn-light-info ms-auto me-2'
+            i.fa-solid.fa-pencil
+          = button_to university_path(university), method: :delete, class: 'btn btn-light-danger' do
+            i.fa-solid.fa-trash
