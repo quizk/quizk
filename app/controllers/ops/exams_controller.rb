@@ -29,6 +29,8 @@ module Ops
     end
 
     def update
+      Exam.update_all(status: Exam::Status::INACTIVE) if exam_params.has_key?(:status) && exam_params[:status] == Exam::Status::ACTIVE.to_s
+
       if @exam.update(exam_params)
         respond_to do |format|
           format.turbo_stream
@@ -54,7 +56,7 @@ module Ops
     end
 
     def exam_params
-      params.require(:exam).permit(:title, :time_limit)
+      params.require(:exam).permit(:title, :status, :time_limit)
     end
   end
 end

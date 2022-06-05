@@ -1,2 +1,3 @@
-= turbo_stream.replace @exam unless flash.now[:error]
+- Exam.all.each do |exam|
+  = turbo_stream.update exam unless flash.now[:error]
 = render_turbo_stream_flash
