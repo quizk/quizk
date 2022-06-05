@@ -18,6 +18,8 @@
 class Question < ApplicationRecord
   belongs_to :topic
   has_many :answers, dependent: :destroy
-
+  has_rich_text :content
   has_one :content, class_name: 'ActionText::RichText', as: :record
+
+  validates :content, presence: true
 end
