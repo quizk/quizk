@@ -3,7 +3,8 @@ module Ops
     before_action :set_question, only: %i[show edit update destroy]
 
     def index
-      @questions = Question.page(params[:page])
+      @q = Question.ransack(search_params)
+      @questions = @q.result(distinct: true).page(params[:page]).per(params[:limit])
     end
 
     def show; end
@@ -43,6 +44,12 @@ module Ops
 
     def set_question
       @question = Question.find(params[:id])
+    end
+
+    def search_params
+      return unless params[:q]
+
+      params.require(:q).permit(:topic_id_eq, :content_body_cont)
     end
 
     def question_params

@@ -4,4 +4,5 @@ en:
       question: Question
     attributes:
       question:
+        topic: Topic
         content: Content

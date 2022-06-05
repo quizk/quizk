@@ -1,0 +1,22 @@
+- model_scope = 'activerecord.attributes.question'
+
+.card.mb-10
+  .card-body
+    = search_form_for query, url: questions_path do |f|
+      .row.mb-6
+        = f.label :topic_id_eq, t('topic', scope: model_scope), class: 'col-lg-4 col-form-label fw-bold fs-6'
+        .col-8
+          = f.select :topic_id_eq,
+                    options_for_select(Topic.all.map { |c| [c.name, c.id] }, params[:q] ? params[:q][:topic_id_eq] : nil),
+                    { include_blank: t('all') },
+                    { class: 'form-select form-select-lg form-select-solid' }
+      .row.mb-6
+        = f.label :content_body_cont, t('content', scope: model_scope), class: 'col-lg-4 col-form-label fw-bold fs-6'
+        .col-8
+          = f.search_field :content_body_cont, class: 'form-control form-control-solid'
+      .row.text-center
+        .col-md-12
+          = button_tag class: 'btn btn-primary me-2' do
+            i.fa-solid.fa-magnifying-glass
+          = link_to questions_path, class: 'btn btn-light btn-active-light-secondary' do
+            i.fa-solid.fa-broom
