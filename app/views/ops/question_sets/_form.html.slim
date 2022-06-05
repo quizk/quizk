@@ -1,0 +1,10 @@
+= simple_form_for [@exam, @question_set] do |f|
+  .d-flex.align-items-center.gap-4
+    = f.number_field :amount, class: 'form-control form-control-solid'
+    i.fa-solid.fa-xmark
+    = f.select :topic_id,
+                options_for_select(Topic.all.map { |c| [c.name, c.id] }, @question_set.topic_id),
+                {},
+                { class: 'form-select form-select-lg form-select-solid' }
+    = button_tag class: 'btn btn-primary ms-auto' do
+      i.fa-solid.fa-check

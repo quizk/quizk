@@ -3,7 +3,7 @@
 = simple_form_for @question, html: { class: 'card card-flush' } do |f|
   .card-header
     .card-title.m-0
-      h3.fw-bolder.m-0 = t('activerecord.models.question')
+      h1.fw-bolder.m-0 = t('activerecord.models.question')
   .card-body.p-9
     .row.mb-6
       = f.label :topic, t('.topic'), class: 'col-lg-4 col-form-label required fw-bold fs-6'

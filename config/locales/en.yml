@@ -2,3 +2,5 @@ en:
   id: ID
   actions: Actions
   correct: Correct
+  time_unit:
+    minutes: minutes

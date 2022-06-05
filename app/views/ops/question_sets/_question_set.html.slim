@@ -1,0 +1,8 @@
+- exam = @exam || exam
+= turbo_frame_tag question_set
+  .d-flex.align-items-center.fs-3.badge.gap-2[class="badge-light-#{color_by_id(question_set.id)}"]
+    = question_set.amount
+    i.fa-solid.fa-xmark
+    = question_set.topic.name
+    = button_to exam_question_set_path(exam, question_set), method: :delete, class: 'btn link-danger p-0' do
+      i.fa-solid.fa-trash

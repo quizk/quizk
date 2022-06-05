@@ -81,7 +81,18 @@ crumb :new_question do
   parent :questions
 end
 
-crumb :edit_question do |question|
-  link t('breadcrumbs.edit_question'), edit_question_path(question)
-  parent :question, question
+# Exam
+crumb :exams do
+  link t('breadcrumbs.exam'), exams_path
+  parent :ops_root
+end
+
+crumb :exam do |exam|
+  link exam.id, exam_path(exam)
+  parent :exams
+end
+
+crumb :new_exam do
+  link t('breadcrumbs.new_exam'), new_exam_path
+  parent :exams
 end

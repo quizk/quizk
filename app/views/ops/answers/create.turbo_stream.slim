@@ -1,2 +1,2 @@
-= turbo_stream.append :answers, @answer
+= turbo_stream.append :answers, @answer unless flash.now[:error]
 = render_turbo_stream_flash

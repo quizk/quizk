@@ -6616,6 +6616,10 @@ textarea.form-control-lg {
   display: inline-flex !important;
 }
 
+.d-flex-wrap {
+  flex-wrap: wrap;
+}
+
 .d-none {
   display: none !important;
 }

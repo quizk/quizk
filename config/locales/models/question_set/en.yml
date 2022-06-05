@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    models:
+      question_set: Question Set
+    attributes:
+      question_set:
+        amount: Amount

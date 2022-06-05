@@ -15,8 +15,11 @@
           = link_to universities_path, title: t('sidebar.universities'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
             i.fa-solid.fa-school
         .menu-item.fs-1.py-2
+          = link_to exams_path, title: t('sidebar.exams'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
+            i.fa-solid.fa-file-circle-question
+        .menu-item.fs-1.py-2
           = link_to topics_path, title: t('sidebar.topics'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
             i.fa-solid.fa-book
         .menu-item.fs-1.py-2
-          = link_to questions_path, title: t('sidebar.question_answer'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
+          = link_to questions_path, title: t('sidebar.questions'), class: 'menu-link menu-center', data: { 'bs-toggle': 'tooltip', 'bs-placement': 'right' } do
             i.fa-solid.fa-clipboard-question

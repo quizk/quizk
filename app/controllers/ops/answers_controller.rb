@@ -23,8 +23,9 @@ module Ops
           format.turbo_stream { flash.now[:notice] = t('flashes.created') }
         end
       else
-        flash.now[:error] = @answer.errors.full_messages.join(', ')
-        render :new, status: :unprocessable_entity
+        respond_to do |format|
+          format.turbo_stream { flash.now[:error] = @answer.errors.full_messages.join(', ') }
+        end
       end
     end
 
@@ -34,8 +35,9 @@ module Ops
           format.turbo_stream { flash.now.notice = t('flashes.updated') }
         end
       else
-        flash.now.error = @answer.errors.full_messages.join(', ')
-        render :edit, status: :unprocessable_entity
+        respond_to do |format|
+          format.turbo_stream { flash.now[:error] = @answer.errors.full_messages.join(', ') }
+        end
       end
     end
 

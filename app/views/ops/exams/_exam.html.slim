@@ -1,0 +1,15 @@
+= turbo_frame_tag exam, class: 'col-md-6'
+  .card
+    .card-body.p-9.border-bottom
+      .d-flex.justify-content-between.align-items-center
+        h1.m-0 
+          span.me-2 = exam.title
+          span.fw-light = "#{exam.time_limit} #{t('time_unit.minutes')}"
+        = link_to edit_exam_path(exam), class: 'btn btn-light-info ms-auto me-2'
+          i.fa-solid.fa-pencil
+        = button_to exam_path(exam), method: :delete, class: 'btn btn-light-danger' do
+          i.fa-solid.fa-trash
+      = simple_form_for exam, html: { class: 'form-check form-switch form-check-custom form-check-success form-check-solid' } do |f|
+        = f.check_box :status, { id: "status_#{dom_id(exam)}", class: 'form-check-input h-20px w-30px', checked: exam.active?, data: { controller: :form, action: 'form#submit' } }, 'active', 'inactive'
+        = f.label :status, t('.current_in_use'), class: 'form-check-label', for: "status_#{dom_id(exam)}"
+    = render partial: 'question_sets', locals: { exam: exam }
