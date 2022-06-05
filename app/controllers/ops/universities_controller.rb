@@ -18,30 +18,40 @@ module Ops
       @university = University.new(university_params)
 
       if @university.save
-        redirect_to @university, notice: t('flashes.created')
+        respond_to do |format|
+          format.turbo_stream
+        end
       else
-        flash[:error] = @university.errors.full_messages.join(', ')
-        render :new, status: :unprocessable_entity
+        respond_to do |format|
+          format.turbo_stream { flash[:error] = @university.errors.full_messages.join(', ') }
+        end
       end
     end
 
     def update
       if @university.update(university_params)
-        redirect_to @university, notice: t('flashes.updated')
+        respond_to do |format|
+          format.turbo_stream
+        end
       else
-        flash[:error] = @university.errors.full_messages.join(', ')
-        render :edit, status: :unprocessable_entity
+        respond_to do |format|
+          format.turbo_stream { flash[:error] = @university.errors.full_messages.join(', ') }
+        end
       end
     end
 
     def destroy
       @university.discard
-      redirect_to universities_path, notice: t('flashes.disabled')
+      respond_to do |format|
+        format.turbo_stream
+      end
     end
 
     def restore
       @university.undiscard
-      redirect_to universities_path, notice: t('flashes.enabled')
+      respond_to do |format|
+        format.turbo_stream
+      end
     end
 
   private
