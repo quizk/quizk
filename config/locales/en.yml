@@ -1,5 +1,6 @@
 en:
   id: ID
+  all: All
   actions: Actions
   correct: Correct
   time_unit:

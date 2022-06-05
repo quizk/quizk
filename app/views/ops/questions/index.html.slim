@@ -2,6 +2,8 @@
 - content_for :title, t('.title')
 - breadcrumb :questions
 
+= render 'search', query: @q
+
 .card
   .card-header.d-flex.justify-content-end.border-0.pt-6
     .card-toolbar
@@ -13,16 +15,20 @@
         thead
           tr.text-start.text-muted.fw-bolder.fs-7.text-uppercase.gs-0
             th.min-w-125px = t('id')
-            th.min-w-125px = t('title', scope: model_scope)
+            th.min-w-125px = t('topic', scope: model_scope)
+            th.min-w-125px = t('content', scope: model_scope)
             th.text-end.min-w-100px = t('action')
         tbody.text-gray-600.fw-bold
         - @questions.each do |question|
           tr[scope='row']
             td = link_to question.id, question_path(question)
+            td = question.topic.name
             td = truncate_actiontext(question.content)
             td.text-end.gx-1
               .d-flex.justify-content-end
-                = button_to question_path(question), method: :delete, class: 'btn btn-sm btn-light-danger me-2' do
+                = link_to question_path(question), class: 'btn btn-sm btn-light-info me-2'
+                  i.fa-solid.fa-pencil
+                = button_to question_path(question), method: :delete, class: 'btn btn-sm btn-light-danger' do
                   i.fa-solid.fa-trash
     .row
       .col.d-flex.align-items-center.justify-content-end
