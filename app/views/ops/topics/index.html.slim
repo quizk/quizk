@@ -2,30 +2,7 @@
 - content_for :title, t('.title')
 - breadcrumb :topics
 
-.card
-  .card-header.d-flex.justify-content-end.border-0.pt-6
-    .card-toolbar
-      = link_to new_topic_path, class: 'btn btn-sm btn-primary me-2'
-        i.fa-solid.fa-plus
-  .card-body.py-4
-    .table-responsive
-      table.table.align-middle.table-row-dashed.fs-6.gy-5
-        thead
-          tr.text-start.text-muted.fw-bolder.fs-7.text-uppercase.gs-0
-            th.min-w-125px = t('id')
-            th.min-w-125px = t('name', scope: model_scope)
-            th.text-end.min-w-100px = t('action')
-        tbody.text-gray-600.fw-bold
-        - @topics.each do |topic|
-          tr[scope='row']
-            td = link_to topic.id, topic_path(topic)
-            td = topic.name
-            td.text-end.gx-1
-              .d-flex.justify-content-end
-                = link_to edit_topic_path(topic), class: 'btn btn-sm btn-light-info me-2'
-                  i.fa-solid.fa-pencil
-                = button_to topic_path(topic), method: :delete, class: 'btn btn-sm btn-light-danger me-2' do
-                  i.fa-solid.fa-trash
-    .row
-      .col.d-flex.align-items-center.justify-content-end
-        = paginate @topics
+.row.mb-10
+  = turbo_frame_tag Topic.new, src: new_topic_path(@topic)
+#topics.row.g-5
+  = render partial: 'topic', collection: @topics
