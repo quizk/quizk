@@ -61,7 +61,7 @@ module Ops
     end
 
     def university_params
-      params.require(:university).permit(:name)
+      params.require(:university).permit(:name, :code)
     end
   end
 end

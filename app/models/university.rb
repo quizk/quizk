@@ -3,6 +3,7 @@
 # Table name: universities
 #
 #  id           :bigint           not null, primary key
+#  code         :string(255)
 #  name         :string(255)
 #  discarded_at :datetime
 #  created_at   :datetime         not null

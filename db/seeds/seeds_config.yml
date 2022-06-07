@@ -1,0 +1,12 @@
+all: &all
+  table_names:
+    - university
+
+development:
+  <<: *all
+
+test:
+  <<: *all
+
+production:
+  <<: *all
