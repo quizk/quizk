@@ -1,11 +1,14 @@
-- model_scope = 'activerecord.attributes.university'
-
 = turbo_frame_tag @university
   = simple_form_for @university, html: { class: 'card card-flush' }, data: { controller: :form, action: 'turbo:submit-end->form#clear' } do |f|
     .card-header
-      .card-title
-        h3.fw-bolder.w-100.me-10 = t('.title')
-        = f.text_field :name, class: 'form-control form-control-solid'
+      .card-title.w-75
+        .row.align-items-center.w-100
+          .col-2
+            .fw-bold.fs-4 = t('.title')
+          .col-2
+            = f.text_field :code, class: 'form-control form-control-solid', placeholder: t('placeholders.university_code')
+          .col-8
+            = f.text_field :name, class: 'form-control form-control-solid', placeholder: t('placeholders.university_name')
       .card-toolbar
         = button_tag class: 'btn btn-primary' do
           i.fa-solid.fa-check

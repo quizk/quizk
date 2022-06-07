@@ -1,13 +1,16 @@
 - model_scope = 'activerecord.attributes.university'
 
 = turbo_frame_tag @university, class: 'col-md-6'
-  .card
-    .card-body.p-9.border-bottom
-      = simple_form_for @university, html: { class: 'd-flex justify-content-between align-items-center' } do |f|
-        .d-flex.align-items-center.gap-2
-          = f.text_field :name, class: 'form-control form-control-solid'
-        div
-          = link_to :back, class: 'btn btn-light btn-active-light-secondary me-2'
-            i.fa-solid.fa-arrow-left
-          = button_tag class: 'btn btn-primary' do
-            i.fa-solid.fa-check
+  .card.card-flush
+    = simple_form_for @university, html: { class: 'card-header' } do |f|
+      .card-title.w-75
+        .row.align-items-center.w-100
+          .col-4
+            = f.text_field :code, class: 'form-control form-control-solid', placeholder: t('placeholders.university_code')
+          .col-8
+            = f.text_field :name, class: 'form-control form-control-solid', placeholder: t('placeholders.university_name')
+      .card-toolbar
+        = link_to :back, class: 'btn btn-light btn-active-light-secondary me-2'
+          i.fa-solid.fa-arrow-left
+        = button_tag class: 'btn btn-primary' do
+          i.fa-solid.fa-check
