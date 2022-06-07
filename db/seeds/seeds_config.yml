@@ -1,6 +1,7 @@
 all: &all
   table_names:
     - university
+    - topic
 
 development:
   <<: *all
