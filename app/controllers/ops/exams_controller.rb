@@ -29,7 +29,7 @@ module Ops
     end
 
     def update
-      Exam.update_all(status: Exam::Status::INACTIVE) if exam_params.has_key?(:status) && exam_params[:status] == Exam::Status::ACTIVE.to_s
+      Exam.update_all(status: Exam::Status::INACTIVE) if exam_params.key?(:status) && exam_params[:status] == Exam::Status::ACTIVE.to_s
 
       if @exam.update(exam_params)
         respond_to do |format|

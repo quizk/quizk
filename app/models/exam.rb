@@ -17,8 +17,8 @@ class Exam < ApplicationRecord
   module Status
     ALL = %i[inactive active].freeze
 
-    INACTIVE = 'inactive'
-    ACTIVE = 'active'
+    INACTIVE = 'inactive'.freeze
+    ACTIVE = 'active'.freeze
   end
 
   enum status: Status::ALL
