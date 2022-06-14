@@ -1,0 +1,30 @@
+- model_scope = 'activerecord.attributes.user'
+
+.card.mb-10
+  .card-body
+    = search_form_for query, url: users_path do |f|
+      .row.mb-6
+        = f.label :university_id_eq, t('university', scope: model_scope), class: 'col-lg-4 col-form-label fw-bold fs-6'
+        .col-8
+          = f.select :university_id_eq,
+                    options_for_select(University.all.map { |c| [c.name, c.id] }, params[:q] ? params[:q][:university_id_eq] : nil),
+                    { include_blank: t('all') },
+                    { class: 'form-select form-select-lg form-select-solid' }
+      .row.mb-6
+        = f.label :email_cont, t('email', scope: model_scope), class: 'col-lg-4 col-form-label fw-bold fs-6'
+        .col-8
+          = f.search_field :email_cont, class: 'form-control form-control-solid'
+      .row.mb-6
+        = f.label :username_cont, t('username', scope: model_scope), class: 'col-lg-4 col-form-label fw-bold fs-6'
+        .col-8
+          = f.search_field :username_cont, class: 'form-control form-control-solid'
+      .row.mb-6
+        = f.label :code_cont, t('code', scope: model_scope), class: 'col-lg-4 col-form-label fw-bold fs-6'
+        .col-8
+          = f.search_field :code_cont, class: 'form-control form-control-solid'
+      .row.text-center
+        .col-md-12
+          = button_tag class: 'btn btn-primary me-2' do
+            i.fa-solid.fa-magnifying-glass
+          = link_to users_path, class: 'btn btn-light btn-active-light-secondary' do
+            i.fa-solid.fa-broom

@@ -1,6 +1,6 @@
 module ApplicationHelper
   TRUNCATE_LENGTH = 50
-  COLORS = %w[primary success info warning danger dark]
+  COLORS = %w[primary success info warning danger dark].freeze
 
   def render_turbo_stream_flash
     turbo_stream.append 'flash', partial: 'layouts/ops/flash'

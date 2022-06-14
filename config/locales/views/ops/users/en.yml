@@ -1,0 +1,7 @@
+en:
+  ops:
+    users:
+      index:
+        title: Users
+      show:
+        title: View User

@@ -1,0 +1,26 @@
+- model_scope = 'activerecord.attributes.user'
+- content_for :title, t('.title')
+- breadcrumb :users
+
+= render 'search', query: @q
+
+.card
+  .card-body.py-4
+    .table-responsive
+      table.table.align-middle.table-row-dashed.fs-6.gy-5
+        thead
+          tr.text-start.text-muted.fw-bolder.fs-7.text-uppercase.gs-0
+            th.min-w-125px = t('id')
+            th.min-w-125px = t('email', scope: model_scope)
+            th.min-w-125px = t('username', scope: model_scope)
+            th.min-w-125px = t('code', scope: model_scope)
+        tbody.text-gray-600.fw-bold
+        - @users.each do |user|
+          tr[scope='row']
+            td = link_to user.id, user_path(user)
+            td = user.email
+            td = user.username
+            td = user.code
+    .row
+      .col.d-flex.align-items-center.justify-content-end
+        = paginate @users

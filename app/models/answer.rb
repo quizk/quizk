@@ -25,8 +25,8 @@ class Answer < ApplicationRecord
   module Status
     ALL = %i[wrong right].freeze
 
-    WRONG = 'wrong'
-    RIGHT = 'right'
+    WRONG = 'wrong'.freeze
+    RIGHT = 'right'.freeze
   end
 
   enum status: Status::ALL

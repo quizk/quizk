@@ -40,20 +40,14 @@ module Ops
       @operator = Operator.find(params[:id])
     end
 
-    def operator_params
-      params.require(:operator).permit(:role, :last_name, :first_name)
-    end
-
     def create_params
-      params.require(:operator).permit(:username, :first_name, :last_name, :password, :password_confirmation)
+      params.require(:operator).permit(:username, :password, :password_confirmation)
     end
 
     def update_params
       params.require(:operator)
         .permit(
           :username,
-          :first_name,
-          :last_name,
           :password,
           :password_confirmation,
         ).reject! { |k, v| v.blank? && %w[password password_confirmation].any?(k) }

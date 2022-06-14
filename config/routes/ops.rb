@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
 
     resources :operators, only: %i[index show new create edit update]
+    resources :users, only: %i[index show]
     resources :universities, concerns: :trashable
     resources :topics
     resources :questions do

@@ -8,10 +8,10 @@
       i.fa-solid.fa-pencil
   .card-body.p-9
     .row.mb-7
+      label.col-lg-4.fw-bold.text-muted = t('email', scope: model_scope)
+      .col-lg-8
+        span.fw-bolder.fs-6.text-dark = @operator.email
+    .row.mb-7
       label.col-lg-4.fw-bold.text-muted = t('username', scope: model_scope)
       .col-lg-8
         span.fw-bolder.fs-6.text-dark = @operator.username
-    .row.mb-7
-      label.col-lg-4.fw-bold.text-muted = t('full_name', scope: model_scope)
-      .col-lg-8
-        span.fw-bolder.fs-6.text-dark = @operator.full_name

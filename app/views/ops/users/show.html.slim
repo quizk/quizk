@@ -1,0 +1,22 @@
+- model_scope = 'activerecord.attributes.user'
+- content_for :title, t('.title')
+- breadcrumb :user, @user
+
+.card.card-flush
+  .card-body.p-9
+    .row.mb-7
+      label.col-lg-4.fw-bold.text-muted = t('university', scope: model_scope)
+      .col-lg-8
+        span.fw-bolder.fs-6.text-dark = @user.university.name
+    .row.mb-7
+      label.col-lg-4.fw-bold.text-muted = t('code', scope: model_scope)
+      .col-lg-8
+        span.fw-bolder.fs-6.text-dark = @user.code
+    .row.mb-7
+      label.col-lg-4.fw-bold.text-muted = t('email', scope: model_scope)
+      .col-lg-8
+        span.fw-bolder.fs-6.text-dark = @user.email
+    .row.mb-7
+      label.col-lg-4.fw-bold.text-muted = t('username', scope: model_scope)
+      .col-lg-8
+        span.fw-bolder.fs-6.text-dark = @user.username
