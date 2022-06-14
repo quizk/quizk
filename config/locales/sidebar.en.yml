@@ -2,6 +2,7 @@ en:
   sidebar:
     dashboard: Dashboard
     operators: Operators
+    users: Users
     universities: Universities
     exams: Exams
     topics: Topics

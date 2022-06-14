@@ -3,10 +3,9 @@
 # Table name: operators
 #
 #  id                 :bigint           not null, primary key
-#  username           :string(255)      default(""), not null
+#  email              :string(255)      default(""), not null
+#  username           :string(255)      default("")
 #  encrypted_password :string(255)      default(""), not null
-#  first_name         :string(255)      default(""), not null
-#  last_name          :string(255)      default(""), not null
 #  discarded_at       :datetime
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
@@ -21,10 +20,6 @@ class Operator < ApplicationRecord
 
   devise :database_authenticatable
 
-  validates :username, :first_name, :last_name, presence: true
+  validates :username, presence: true
   validates :password_confirmation, presence: true, if: :password
-
-  def full_name
-    "#{first_name} #{last_name}"
-  end
 end

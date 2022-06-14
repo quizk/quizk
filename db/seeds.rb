@@ -4,13 +4,14 @@ require 'csv_seed'
 env = ENV['SEED_ENV'] || Rails.env
 
 # Create Admin
-Operator.first_or_create!(
-  username: 'admin',
-  first_name: 'Admin',
-  last_name: 'istrator',
-  password: 'admin',
-  password_confirmation: 'admin',
-) unless env == 'test'
+unless env == 'test'
+  Operator.first_or_create!(
+    email: 'admin@admin.com',
+    username: 'Administrator',
+    password: 'admin',
+    password_confirmation: 'admin',
+  )
+end
 
 seeds_config = YAML.load_file(Rails.root.join('db', 'seeds', 'seeds_config.yml'))
 target_files = seeds_config[env]['table_names'] || []

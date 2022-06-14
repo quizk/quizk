@@ -21,8 +21,8 @@
               .symbol.symbol-50px.me-5
                 = image_tag 'public/avatar.jpg'
               .d-flex.flex-column
-                .fw-bolder.d-flex.align-items-center.fs-5 = current_operator.full_name
-                .fw-bold.text-muted.text-hover-primary.fs-7 = current_operator.username
+                .fw-bolder.d-flex.align-items-center.fs-5 = current_operator.username
+                .fw-bold.text-muted.text-hover-primary.fs-7 = current_operator.email
           .separator.my-2
           .menu-item.px-5
             = link_to 'My Profile', operator_path(@current_operator), class: 'menu-link px-5'

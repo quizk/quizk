@@ -13,17 +13,15 @@
         thead
           tr.text-start.text-muted.fw-bolder.fs-7.text-uppercase.gs-0
             th.min-w-125px = t('id')
+            th.min-w-125px = t('email', scope: model_scope)
             th.min-w-125px = t('username', scope: model_scope)
-            th.min-w-125px = t('first_name', scope: model_scope)
-            th.min-w-125px = t('last_name', scope: model_scope)
             th.text-end.min-w-100px = t('actions')
         tbody.text-gray-600.fw-bold
         - @operators.each do |operator|
           tr[scope='row']
             td = link_to operator.id, operator_path(operator)
+            td = operator.email
             td = operator.username
-            td = operator.last_name
-            td = operator.first_name
             td.text-end.gx-1
               .d-flex.justify-content-end
                 = link_to edit_operator_path(operator), class: 'btn btn-sm btn-light-info me-2'
